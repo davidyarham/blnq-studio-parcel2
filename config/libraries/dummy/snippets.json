@@ -1,0 +1,1 @@
+{"html":[{"label":"prefix-name","insertText":"<example attribute=\"${1:Default Value}\" ${2|Option1,Option2|}>\n    $0\n</example>\n"}],"javascript":[{"label":"prefix-myFuntionName","insertText":"var ${1:myFunctionName} = () => {\n\treturn ${0};\n};"}]}

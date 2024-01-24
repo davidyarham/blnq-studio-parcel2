@@ -1,0 +1,159 @@
+.editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    overflow: hidden;
+    flex-direction: column;
+    iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    .editor__wrapper {
+        position: relative;
+        overflow: hidden;
+        flex: 1;
+    }
+    .editor__header {
+        position: relative;
+        display: none;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        height: 43px;
+        min-height: 43px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        border-bottom: 1px solid @dark-grey;
+        [data-theme='theme-light'] & {
+            border-color: @white-darker;
+        }
+        svg {
+            flex-shrink: 0;
+            width: 16px;
+        }
+        .inner {
+            margin-left: 5px;
+        }
+        button {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+.monaco-editor {
+    font-family: Menlo, Monaco, 'Courier New', monospace !important;
+}
+
+.editor.show {
+    //display: block;
+    display: flex;
+}
+
+.monaco-editor.blnq-editor {
+    background: transparent !important;
+}
+
+.monaco-editor.blnq-editor .margin,
+.monaco-editor.blnq-editor .monaco-editor-background {
+    background: transparent;
+}
+
+.monaco-editor.blnq-editor .view-overlays .current-line {
+    border: 1px solid transparent !important;
+    background: @dark-grey;
+    [data-theme='theme-light'] & {
+        background: darken(@white, 4%);
+    }
+}
+
+.monaco-editor.blnq-editor .line-numbers {
+    color: lighten(@medium-grey, 47%);
+    [data-theme='theme-light'] & {
+        color: @grey;
+    }
+}
+
+.monaco-editor.blnq-editor .current-line {
+    background: @dark-grey;
+    [data-theme='theme-light'] & {
+        background: @white-darker;
+    }
+}
+
+.monaco-editor .monaco-scrollable-element .scrollbar.horizontal,
+.monaco-editor .decorationsOverviewRuler,
+.monaco-editor
+    .monaco-scrollable-element
+    .scrollbar.vertical
+    .arrow-background {
+    background: transparent;
+}
+.monaco-editor .monaco-scrollable-element .scrollbar.vertical .slider,
+.monaco-editor .monaco-scrollable-element .scrollbar.horizontal .slider {
+    background: fade(#5f6d87, 35%);
+}
+.monaco-editor.blnq-editor {
+    .monaco-menu-container {
+        .monaco-scrollable-element {
+            overflow: hidden;
+            border: 1px solid @dark-grey;
+            border-radius: @border-radius;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3) !important;
+        }
+    }
+
+    .monaco-menu {
+        font-family: 'OpenSans-SemiBold', 'HelveticaNeue-Light',
+            'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+            'Lucida Grande', sans-serif;
+
+        ul {
+            background: @dark-grey;
+        }
+        .separator {
+            height: 1px;
+            margin: 0 !important;
+            padding: 0 !important;
+            border-color: @dark-grey !important;
+        }
+        .action-item {
+            border-width: 0 !important;
+        }
+        a.action-menu-item {
+            height: auto;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            color: @grey !important;
+            border: none !important;
+            background: @medium-grey !important;
+            &:hover,
+            &:focus {
+                color: @dark-grey !important;
+                background: @hint !important;
+                .submenu-indicator {
+                    background: @dark-grey !important;
+                }
+            }
+        }
+        .submenu-indicator {
+            background: @grey !important;
+        }
+    }
+
+    .monaco-tree-wrapper {
+        font-family: 'OpenSans-SemiBold', 'HelveticaNeue-Light',
+            'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+            'Lucida Grande', sans-serif;
+        font-size: 12px;
+    }
+}

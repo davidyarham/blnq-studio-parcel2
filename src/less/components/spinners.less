@@ -1,0 +1,50 @@
+.spinner-wrapper {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background: fade(@medium-grey, 50%);
+    &.show {
+        display: block;
+    }
+    .spinner {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        width: 32px;
+        height: 32px;
+        margin: -16px 0 0 -16px;
+        animation: spinner-rotate 2s linear infinite;
+    }
+    .spinner .path {
+        animation: spinner-dash 1.5s ease-in-out infinite, colors 6s infinite;
+
+        stroke: #ffd300;
+        stroke-width: 5px;
+        stroke-linecap: round;
+    }
+}
+
+@keyframes spinner-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spinner-dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}

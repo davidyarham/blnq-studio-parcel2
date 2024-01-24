@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+    <ShortName>Blnq Studio</ShortName>
+    <Description>Blnq Studio - Code using HTML, CSS and JavaScript anywhere.</Description>
+    <Url type="text/html" method="get" template="https://studio.blnq.io/dashboard?q={searchTerms}"/>
+</OpenSearchDescription>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Blnq Studio: Login</title>
+    <meta name="description" content="Blnq Studio - Code using HTML, CSS and JavaScript anywhere." />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="manifest" href="assets/manifest/web.manifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Blnq" />
+    <meta name="apple-mobile-web-app-title" content="Blnq" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-navbutton-color" content="#ffd300" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="msapplication-starturl" content="/dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" sizes="192x192" href="assets/manifest/icon-desktop@192w.png" />
+    <link rel="icon" sizes="512x512" href="assets/manifest/icon-desktop@512w.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/manifest/icon-mobile@192w.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="assets/manifest/icon-mobile@512w.png" />
+
+    <meta property="og:url" content="https://studio.blnq.io" />
+    <meta property="og:title" content="Blnq Studio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Blnq Studio - Code using HTML, CSS and JavaScript anywhere." />
+    <meta property="og:image" content="https://studio.blnq.io/icon-mobile@512w.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@blnqco" />
+    <meta name="twitter:title" content="Blnq Studio" />
+    <meta name="twitter:description" content="Blnq Studio - Code using HTML, CSS and JavaScript anywhere." />
+    <meta name="twitter:image" content="https://studio.blnq.io/icon-mobile@512w.png" />
+
+    <link rel="stylesheet" href="less/blnq.less" />
+    <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "url": "https://studio.blnq.io",
+                "logo": "https://studio.blnq.io/manifest/icon-desktop@192w.png",
+                "sameAs": [
+                    "https://twitter.com/blnqco",
+                    "https://www.instagram.com/blnqio",
+                    "https://www.linkedin.com/company/blnq-io"
+                ]
+            }
+        </script>
+</head>
+
+<body class="app login-app">
+    <div class="login-page">
+        <div class="login" id="loginBox">
+            <div class="login__header">
+                <h2>Please login to your account</h2>
+            </div>
+            <div class="login__body">
+                <form action="/auth/login" method="POST" id="loginForm" class="active" data-feedback-target="#loginBox">
+                    <div class="field field--full">
+                        <label>
+                            <div class="field__label">
+                                Email Address
+                            </div>
+                            <input type="email" placeholder="" required id="emailAddress" name="email" />
+                        </label>
+                    </div>
+                    <div class="field field--full">
+                        <label>
+                            <div class="field__label">
+                                Password
+                            </div>
+                            <input type="password" required placeholder="" id="password" name="password" />
+                        </label>
+                    </div>
+                    <div class="form-error-container"></div>
+                    <div class="align-right" style="margin-bottom: 10px;">
+                        <!--a href="/password-reset-request">Forgot Password?</a-->
+                    </div>
+
+                    <div class="flex-row flex-wrap login-buttons">
+                        <button class="btn btn--login-primary" id="loginButton">
+                            Login
+                        </button>
+                        <a class="btn btn--login-secondary" href="/signup">or Sign Up for FREE</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="login.js" type="module"></script>
+</body>
+
+</html>

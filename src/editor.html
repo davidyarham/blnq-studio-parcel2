@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title id="htmltitle">${blnqDisplayName} - Blnq Studio</title>
+    <meta name="description" content="Blnq Studio - Code using HTML, CSS and JavaScript anywhere." />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="manifest" href="assets/manifest/web.manifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Blnq" />
+    <meta name="apple-mobile-web-app-title" content="Blnq" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-navbutton-color" content="#ffd300" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="msapplication-starturl" content="/dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" sizes="192x192" href="assets/manifest/icon-desktop@192w.png" />
+    <link rel="icon" sizes="512x512" href="assets/manifest/icon-desktop@512w.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/manifest/icon-mobile@192w.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="assets/manifest/icon-mobile@512w.png" />
+
+
+    <meta property="og:url" content="https://studio.blnq.io" />
+    <meta property="og:site_name" content="Blnq Studio" />
+    <meta property="og:description" content="Blnq Studio - Code using HTML, CSS and JavaScript anywhere." />
+
+    <link rel="stylesheet" href="less/blnq.less" />
+    <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "url": "https://studio.blnq.io",
+                "logo": "https://studio.blnq.io/manifest/icon-desktop@192w.png",
+                "sameAs": [
+                    "https://twitter.com/blnqco",
+                    "https://www.instagram.com/blnqio",
+                    "https://www.linkedin.com/company/blnq-io"
+                ]
+            }
+        </script>
+</head>
+
+<body class="app">
+    <!-- LOADER -->
+    <div class="loader">
+        <div class="loader__info">
+            <img class="loader__img" />
+            <div class="loader__bg"></div>
+            <div class="loader__info__text"></div>
+        </div>
+        <div>
+            <svg width="63" height="63">
+                <g fill="#1B1E2B" fill-rule="evenodd">
+                    <path
+                        d="M11 4.5L15.412 0l13.235 13.5L15.412 27 11 22.5l8.823-9L11 4.5zM49.824 4.5L45.412 0 32.176 13.5 45.412 27l4.412-4.5-8.823-9 8.823-9z" />
+                    <g>
+                        <path
+                            d="M11.296 57.404c-2.604 0-4.541-1.272-5.436-3.38h-.114v3.13H0V33h5.778v9.14h.114c.895-2.177 2.832-3.449 5.355-3.449 4.476 0 7.064 3.431 7.064 9.357 0 5.908-2.571 9.356-7.015 9.356zm-1.77-14.076c-2.017 0-3.32 1.874-3.336 4.72.016 2.879 1.319 4.703 3.337 4.703 2.035 0 3.337-1.841 3.337-4.703s-1.319-4.72-3.337-4.72zm9.875 13.85V33h5.668v24.179h-5.668zm7.194 0V38.968h5.568v3.445h.113c.937-2.442 2.744-3.763 5.44-3.763 3.922 0 6.1 2.542 6.1 6.857v11.673h-5.713V46.793c0-2.073-.936-3.31-2.824-3.31-1.84 0-2.954 1.42-2.954 3.427V57.18h-5.73zm25.223-18.755c2.588 0 4.541 1.41 5.339 3.455h.114v-3.22H63v24.17h-5.762v-9.024h-.114c-.7 1.946-2.767 3.371-5.388 3.371-4.378 0-7.047-3.556-7.047-9.426 0-5.803 2.702-9.326 7.129-9.326zm2.1 14.09c2.067 0 3.336-1.779 3.336-4.714 0-2.901-1.286-4.73-3.336-4.73-2.068 0-3.32 1.829-3.32 4.73 0 2.919 1.236 4.713 3.32 4.713z" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="app__main" id="appMain">
+        <div class="app__header">
+            <a href="/" class="app__logo" title="Back to Dashboard" aria-label="Back to Dashboard">
+                <div class="back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentcolor"
+                            d="M10 18h5v-6h-5v6zm-6 0h5V5H4v13zm12 0h5v-6h-5v6zM10 5v6h11V5H10z" />
+                    </svg>
+                </div>
+                <div class="logo">
+                    <svg width="40" height="19">
+                        <path
+                            d="M7.172 15.456c-1.653 0-2.883-.805-3.452-2.141h-.072v1.982H0V0h3.669v5.788h.072c.568-1.378 1.798-2.184 3.4-2.184 2.842 0 4.485 2.174 4.485 5.926 0 3.742-1.633 5.926-4.454 5.926zM6.05 6.541c-1.282 0-2.108 1.187-2.119 2.99.01 1.823.837 2.978 2.119 2.978 1.292 0 2.118-1.166 2.118-2.979 0-1.813-.837-2.99-2.118-2.99zm6.27 8.772V0h3.598v15.313h-3.599zm4.567 0V3.78h3.535v2.182h.072c.594-1.546 1.742-2.383 3.453-2.383 2.49 0 3.874 1.61 3.874 4.342v7.393h-3.628V8.736c0-1.314-.594-2.097-1.793-2.097-1.168 0-1.875.9-1.875 2.171v6.503h-3.638zM32.9 3.435c1.643 0 2.884.892 3.39 2.188h.072v-2.04H40v15.308h-3.658v-5.715h-.073c-.444 1.232-1.757 2.135-3.42 2.135-2.78 0-4.475-2.252-4.475-5.97 0-3.676 1.715-5.906 4.526-5.906zm1.333 8.923c1.313 0 2.119-1.126 2.119-2.985 0-1.838-.816-2.996-2.119-2.996-1.312 0-2.108 1.158-2.108 2.996 0 1.848.786 2.985 2.108 2.985z"
+                            fill="currentcolor" fill-rule="evenodd" />
+                    </svg>
+                </div>
+            </a>
+
+            <div class="dropdown">
+                <button class="btn dropdown__toggler">
+                    <svg viewBox="0 0 12 8" width="12" height="8">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M-2-4h16v16H-2z" />
+                            <path d="M0 8h8V6.667H0V8zm0-3.333h12V3.333H0v1.334zM0 0v1.333h9V0H0z"
+                                fill="currentcolor" />
+                        </g>
+                    </svg>
+                    <span class="hide-mobile inner">Menu</span>
+                </button>
+
+                <div class="dropdown__body">
+                    <a class="btn" id="menuNew" href="/e">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+                                fill="currentcolor" />
+                        </svg>
+                        <div class="btn__title">New Blnq</div>
+                    </a>
+                    <hr />
+                    <button class="btn" id="menuSave" disabled>
+                        <svg viewBox="0 0 16 11" width="16" height="11">
+                            <path
+                                d="M12.9 4.027a4.993 4.993 0 0 0-9.333-1.334A3.996 3.996 0 0 0 0 6.667c0 2.206 1.793 4 4 4h8.667A3.335 3.335 0 0 0 16 7.333a3.317 3.317 0 0 0-3.1-3.306zM9.333 6v2.667H6.667V6h-2L8 2.667 11.333 6h-2z"
+                                fill="currentcolor" fill-rule="evenodd" />
+                        </svg>
+                        <div class="btn__title">Save All</div>
+                    </button>
+
+                    <button class="btn" id="menuConfig">
+                        <svg width="16" height="16" viewBox="0 0 24 24">
+                            <path fill="currentcolor"
+                                d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
+                        </svg>
+                        <div class="btn__title">Configuration</div>
+                    </button>
+
+                    <button class="btn" id="menuHistory" disabled>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentcolor">
+                            <path
+                                d="M14 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-2-9a9 9 0 0 0-9 9H0l4 4 4-4H5c0-3.87 3.13-7 7-7s7 3.13 7 7a6.995 6.995 0 0 1-11.06 5.7l-1.42 1.44A9 9 0 1 0 12 3z" />
+                        </svg>
+                        <div class="btn__title">History</div>
+                    </button>
+
+                    <button id="lighthouseButton" class="btn btn--lighthouse" disabled>
+                        <svg class="lh-topbar__logo" viewBox="0 0 24 24" style="width: 16px;">
+                            <defs>
+                                <linearGradient x1="57.456%" y1="13.086%" x2="18.259%" y2="72.322%"
+                                    id="lh-topbar__logo--a">
+                                    <stop stop-color="#262626" stop-opacity=".1" offset="0%"></stop>
+                                    <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+                                </linearGradient>
+                                <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="lh-topbar__logo--b">
+                                    <stop stop-color="#262626" stop-opacity=".1" offset="0%"></stop>
+                                    <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+                                </linearGradient>
+                                <linearGradient x1="58.764%" y1="65.756%" x2="36.939%" y2="50.14%"
+                                    id="lh-topbar__logo--c">
+                                    <stop stop-color="#262626" stop-opacity=".1" offset="0%"></stop>
+                                    <stop stop-color="#262626" stop-opacity="0" offset="100%"></stop>
+                                </linearGradient>
+                                <linearGradient x1="41.635%" y1="20.358%" x2="72.863%" y2="85.424%"
+                                    id="lh-topbar__logo--d">
+                                    <stop stop-color="#FFF" stop-opacity=".1" offset="0%"></stop>
+                                    <stop stop-color="#FFF" stop-opacity="0" offset="100%"></stop>
+                                </linearGradient>
+                            </defs>
+                            <g fill="none" fill-rule="evenodd">
+                                <path
+                                    d="M12 3l4.125 2.625v3.75H18v2.25h-1.688l1.5 9.375H6.188l1.5-9.375H6v-2.25h1.875V5.648L12 3zm2.201 9.938L9.54 14.633 9 18.028l5.625-2.062-.424-3.028zM12.005 5.67l-1.88 1.207v2.498h3.75V6.86l-1.87-1.19z"
+                                    fill="#F44B21"></path>
+                                <path fill="#FFF" d="M14.201 12.938L9.54 14.633 9 18.028l5.625-2.062z"></path>
+                                <path d="M6 18c-2.042 0-3.95-.01-5.813 0l1.5-9.375h4.326L6 18z"
+                                    fill="url(#lh-topbar__logo--a)" fill-rule="nonzero" transform="translate(6 3)">
+                                </path>
+                                <path fill="#FFF176" fill-rule="nonzero"
+                                    d="M13.875 9.375v-2.56l-1.87-1.19-1.88 1.207v2.543z"></path>
+                                <path fill="url(#lh-topbar__logo--b)" fill-rule="nonzero" d="M0 6.375h6v2.25H0z"
+                                    transform="translate(6 3)"></path>
+                                <path fill="url(#lh-topbar__logo--c)" fill-rule="nonzero" d="M6 6.375H1.875v-3.75L6 0z"
+                                    transform="translate(6 3)"></path>
+                                <path fill="url(#lh-topbar__logo--d)" fill-rule="nonzero"
+                                    d="M6 0l4.125 2.625v3.75H12v2.25h-1.688l1.5 9.375H.188l1.5-9.375H0v-2.25h1.875V2.648z"
+                                    transform="translate(6 3)"></path>
+                            </g>
+                        </svg>
+                        <div class="btn__title">
+                            Generate Lighthouse Report
+                        </div>
+                        <span class="stale badge">Stale</span>
+                    </button>
+
+                    <hr />
+                    <button class="btn" id="menuFork" disabled>
+                        <svg viewBox="0 0 10 16" width="10" height="16">
+                            <path fill-rule="evenodd" fill="currentcolor"
+                                d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z">
+                            </path>
+                        </svg>
+                        <div class="btn__title">Fork</div>
+                    </button>
+                    <button class="btn btn--delete" id="menuDelete" disabled>
+                        <svg width="18" height="18" viewBox="0 0 24 24">
+                            <path
+                                d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"
+                                fill="currentcolor" />
+                        </svg>
+                        <div class="btn__title">Delete</div>
+                    </button>
+                    <hr />
+
+                    <button class="btn" id="menuPreferences">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                            <path fill="currentcolor"
+                                d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z" />
+                        </svg>
+                        <div class="btn__title">Preferences</div>
+                    </button>
+
+                    <hr />
+                    <a href="/" class="btn" id="menuClose">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                            <path fill="currentcolor"
+                                d="M10 18h5v-6h-5v6zm-6 0h5V5H4v13zm12 0h5v-6h-5v6zM10 5v6h11V5H10z" />
+                        </svg>
+                        <div class="btn__title">Back to Dashboard</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="blnqNameHolder hide-mobile">
+                <svg viewBox="0 0 24 24" class="icon">
+                    <path
+                        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                </svg>
+                <input aria-label="Blnq Name" type="text" class="blnq__title" id="blnqInfo" maxlength="64"
+                    autocomplete="off" placeholder="An Untitled Masterpiece" onfocus="this.select()" />
+            </div>
+            <div class="show-mobile flex"></div>
+
+            <button class="btn btn--icon" title="Share" aria-label="Share" id="shareButton" disabled>
+                <svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                    <path
+                        d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
+                </svg>
+            </button>
+
+            <button class="btn hide-mobile" id="layoutButton" title="Toggle Layout" aria-label="Toggle Layout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentcolor"
+                        d="M13 12h7v1.5h-7zm0-2.5h7V11h-7zm0 5h7V16h-7zM21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 15h-9V6h9v13z" />
+                </svg>
+                <span class="inner">Layout</span>
+            </button>
+
+            <button class="btn" id="configButton">
+                <svg width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentcolor"
+                        d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
+                </svg>
+                <span class="inner hide-mobile">Configuration</span>
+            </button>
+
+            <button class="btn" id="saveButton" disabled>
+                <svg width="16" height="11">
+                    <path
+                        d="M12.9 4.027a4.993 4.993 0 0 0-9.333-1.334A3.996 3.996 0 0 0 0 6.667c0 2.206 1.793 4 4 4h8.667A3.335 3.335 0 0 0 16 7.333a3.317 3.317 0 0 0-3.1-3.306zM9.333 6v2.667H6.667V6h-2L8 2.667 11.333 6h-2z"
+                        fill="currentcolor" fill-rule="evenodd" />
+                </svg><span class="inner">Save</span>
+            </button>
+            <div id="userDetails">
+                <button class="btn" id="login">
+                    Login<span class="hide-mobile">/Sign Up</span>
+                </button>
+            </div>
+        </div>
+        <div class="app__body app-layout" data-layout="right-left">
+            <section class="app__section app__section--preview">
+                <div class="preview__header">
+                    <button class="btn" id="togglePreview">
+                        <div class="btn__inner">
+                            Preview
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="currentcolor">
+                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                <div class="app__section__header">
+                    <div>
+                        <label class="toggleField" title="Toggle Inspect Mode">
+                            <input type="checkbox" id="showInspector" aria-label="Toggle Inspector" />
+                            <svg width="16" height="16" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="#000" fill-rule="evenodd">
+                                    <path fill="currentcolor"
+                                        d="M7 13.333H4v1.334H0v-4h1.333V4H0V0h4v1.333h6.667V0h4v4h-1.334v3H12V4h-1.333V2.667H4V4H2.667v6.667H4V12h3v1.333zm-5.667-12v1.334h1.334V1.333H1.333zm1.334 12V12H1.333v1.333h1.334zM12 2.667h1.333V1.333H12v1.334z"
+                                        fill-rule="nonzero" />
+                                    <path fill="currentcolor" d="M7.222 7.222l5.556 1.06-2.65 1.847-1.846 2.649z" />
+                                    <path fill="currentcolor" d="M8.428 9.214l.786-.785 4.714 4.714-.786.786z" />
+                                </g>
+                            </svg>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="toggleField" title="Toggle Ruler">
+                            <input type="checkbox" id="showRuler" aria-label="Toggle Ruler" />
+                            <svg width="16" height="16" viewBox="0 0 24 24">
+                                <path fill="currentcolor"
+                                    d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h2v4h2V8h2v4h2V8h2v4h2V8h2v4h2V8h2v8z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="toggleField" title="Toggle Outlines">
+                            <input type="checkbox" id="showOutlines" aria-label="Toggle Outlines" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                                <path fill="currentcolor"
+                                    d="M7 5h2V3H7v2zm0 8h2v-2H7v2zm0 8h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm-8 0h2v-2H3v2zm0-4h2v-2H3v2zm0-4h2v-2H3v2zm0-4h2V7H3v2zm0-4h2V3H3v2zm8 8h2v-2h-2v2zm8 4h2v-2h-2v2zm0-4h2v-2h-2v2zm0 8h2v-2h-2v2zm0-12h2V7h-2v2zm-8 0h2V7h-2v2zm8-6v2h2V3h-2zm-8 2h2V3h-2v2zm4 16h2v-2h-2v2zm0-8h2v-2h-2v2zm0-8h2V3h-2v2z" />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="flex" style="
+                                align-items: center;
+                                justify-content: center;
+                                display: flex;
+                            ">
+                        <div class="field field--value-sized" id="sizerSelect" title="Change Dimensions">
+                            <label>
+                                <svg width="16" height="12" class="hide-mobile">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path d="M0-2h16v16H0z" />
+                                        <path
+                                            d="M2.667 2h12V.667h-12c-.734 0-1.334.6-1.334 1.333v7.333H0v2h9.333v-2H2.667V2zm12.666 1.333h-4c-.366 0-.666.3-.666.667v6.667c0 .366.3.666.666.666h4c.367 0 .667-.3.667-.666V4c0-.367-.3-.667-.667-.667zm-.666 6H12V4.667h2.667v4.666z"
+                                            fill="currentcolor" />
+                                    </g>
+                                </svg>
+                                <div class="field__value">
+                                    Available Space (100% x 100%)
+                                </div>
+                                <select id="sizeSelector"> </select>
+                            </label>
+                        </div>
+                        <div class="zoom hide-mobile" title="Zoom"></div>
+                        <button class="btn btn--icon btn--spin" id="flipButton" title="Rotate">
+                            <svg width="16" height="16">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="M0 0h16v16H0z" />
+                                    <path
+                                        d="M10.987 1.68a7 7 0 0 1 3.98 5.653h1C15.627 3.227 12.193 0 8 0l-.44.02 2.54 2.54.887-.88zM6.82 1.167a.994.994 0 0 0-1.413 0l-4.24 4.24a.994.994 0 0 0 0 1.413l8.013 8.013a.994.994 0 0 0 1.413 0l4.24-4.24a.994.994 0 0 0 0-1.413L6.82 1.167zm3.067 12.96L1.873 6.113l4.24-4.24 8.014 8.014-4.24 4.24zm-4.874.193a6.991 6.991 0 0 1-3.98-5.653h-1C.373 12.773 3.807 16 8 16l.44-.02-2.54-2.54-.887.88z"
+                                        fill="currentcolor" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div id="openWithHolder"></div>
+                </div>
+
+                <div class="app__section__body preview" style="--width: 100%; --height: 100%;">
+                    <div class="inspector">
+                        <div class="inspector__bubble"></div>
+                        <div class="inspector__overlay">
+                            <div class="inspector__content"></div>
+                        </div>
+                    </div>
+                    <div class="ruler">
+                        <div class="ruler__x"></div>
+                        <div class="ruler__axis-x"></div>
+                        <div class="ruler__y"></div>
+                        <div class="ruler__axis-y"></div>
+                    </div>
+                    <div class="os-overlay"></div>
+                </div>
+            </section>
+            <section class="app__section app__section--editors">
+                <div class="app__section__header">
+                    <div class="app__section--header--wrapper">
+                        <button class="btn btn--tab active" data-show="HTML">
+                            <svg version="1.1" width="16" height="16" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m12 17.56l4.07-1.13.55-6.1h-7.24l-.18-2.03h7.6l.2-1.99h-10l.56 6.01h6.89l-.23 2.58-2.22.6-2.22-.6-.14-1.66h-2l.29 3.19 4.07 1.13m-7.93-14.56h15.86l-1.43 16.2-6.5 1.8-6.5-1.8-1.43-16.2z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">HTML</span>
+                        </button>
+                        <button class="btn btn--tab" data-show="CSS">
+                            <svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="15"
+                                height="15">
+                                <path
+                                    d="m5 3l-.65 3.34h13.59l-.44 2.16h-13.58l-.66 3.33h13.59l-.76 3.81-5.48 1.81-4.75-1.81.33-1.64h-3.34l-.79 4 7.85 3 9.05-3 1.2-6.03.24-1.21 1.54-7.76h-16.94z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">CSS</span>
+                        </button>
+                        <button class="btn btn--tab __btn--tab-widthdropdown" data-show="JS">
+                            <svg version="1.1" width="15" height="15" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m3 3h18v18h-18v-18m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7v5.74c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">JavaScript</span>
+                        </button>
+
+                        <button class="btn btn--tab" data-show="JSON">
+                            <svg version="1.1" width="14" height="14" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m5 3h2v2h-2v5a2 2 0 0 1 -2 2 2 2 0 0 1 2 2v5h2v2h-2c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0 -2 -2h-1v-2h1a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0 -2 2v4a2 2 0 0 1 -2 2h-2v-2h2v-5a2 2 0 0 1 2 -2 2 2 0 0 1 -2 -2v-5h-2v-2h2m-7 12a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m8 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">JSON</span>
+                        </button>
+                    </div>
+                    <button class="btn btn-shadow-left" title="Format Document" id="formatDocument">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentcolor"
+                                d="M15 15H3v2h12v-2zm0-8H3v2h12V7zM3 13h18v-2H3v2zm0 8h18v-2H3v2zM3 3v2h18V3H3z" />
+                        </svg>
+                        <span class="inner hide-mobile">Format</span>
+                    </button>
+                </div>
+                <div class="app__section__body">
+                    <div id="editorHTML" class="editor show" data-name="HTML">
+                        <div class="editor__header">
+                            <svg version="1.1" width="16" height="16" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m12 17.56l4.07-1.13.55-6.1h-7.24l-.18-2.03h7.6l.2-1.99h-10l.56 6.01h6.89l-.23 2.58-2.22.6-2.22-.6-.14-1.66h-2l.29 3.19 4.07 1.13m-7.93-14.56h15.86l-1.43 16.2-6.5 1.8-6.5-1.8-1.43-16.2z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">HTML</span>
+                            <button class="btn btn-shadow-left" title="Format Document" id="formatDocument1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentcolor"
+                                        d="M15 15H3v2h12v-2zm0-8H3v2h12V7zM3 13h18v-2H3v2zm0 8h18v-2H3v2zM3 3v2h18V3H3z" />
+                                </svg>
+                                <span class="inner hide-mobile">Format</span>
+                            </button>
+                        </div>
+                        <div class="editor__wrapper"></div>
+                    </div>
+                    <div id="editorCSS" class="editor" data-name="CSS" data-show="on">
+                        <div class="editor__header">
+                            <svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="15"
+                                height="15">
+                                <path
+                                    d="m5 3l-.65 3.34h13.59l-.44 2.16h-13.58l-.66 3.33h13.59l-.76 3.81-5.48 1.81-4.75-1.81.33-1.64h-3.34l-.79 4 7.85 3 9.05-3 1.2-6.03.24-1.21 1.54-7.76h-16.94z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">CSS</span>
+                        </div>
+                        <div class="editor__wrapper"></div>
+                    </div>
+                    <div id="editorJS" class="editor" data-name="JS" data-show="on">
+                        <div class="editor__header">
+                            <svg version="1.1" width="15" height="15" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m3 3h18v18h-18v-18m4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.53-.8 2.53-2.55v-5.78h-1.7v5.74c0 .86-.35 1.08-.9 1.08-.58 0-.82-.4-1.09-.87l-1.38.83m5.98-.18c.5.98 1.51 1.73 3.09 1.73 1.6 0 2.8-.83 2.8-2.36 0-1.41-.81-2.04-2.25-2.66l-.42-.18c-.73-.31-1.04-.52-1.04-1.02 0-.41.31-.73.81-.73.48 0 .8.21 1.09.73l1.31-.87c-.55-.96-1.33-1.33-2.4-1.33-1.51 0-2.48.96-2.48 2.23 0 1.38.81 2.03 2.03 2.55l.42.18c.78.34 1.24.55 1.24 1.13 0 .48-.45.83-1.15.83-.83 0-1.31-.43-1.67-1.03l-1.38.8z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">JavaScript</span>
+                        </div>
+                        <div class="editor__wrapper"></div>
+                    </div>
+                    <div id="editorJSON" class="editor" data-name="JSON">
+                        <div class="editor__header">
+                            <svg version="1.1" width="14" height="14" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m5 3h2v2h-2v5a2 2 0 0 1 -2 2 2 2 0 0 1 2 2v5h2v2h-2c-1.07-.27-2-.9-2-2v-4a2 2 0 0 0 -2 -2h-1v-2h1a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2m14 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0 -2 2v4a2 2 0 0 1 -2 2h-2v-2h2v-5a2 2 0 0 1 2 -2 2 2 0 0 1 -2 -2v-5h-2v-2h2m-7 12a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m-4 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1m8 0a1 1 0 0 1 1 1 1 1 0 0 1 -1 1 1 1 0 0 1 -1 -1 1 1 0 0 1 1 -1z"
+                                    fill="currentcolor" />
+                            </svg>
+                            <span class="inner">JSON</span>
+                        </div>
+                        <div class="editor__wrapper"></div>
+                    </div>
+                </div>
+
+                <div class="console" id="console">
+                    <div class="console__header">
+                        <button class="btn" id="toggleConsole">
+                            <div class="btn__inner">
+                                Console
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="currentcolor">
+                                    <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="console__body"></div>
+                </div>
+            </section>
+        </div>
+        <div class="saver">thinking and blnqing</div>
+        <div class="toasty"></div>
+        <audio id="toasty" src="assets/sounds/toasty.mp3"></audio>
+        <div class="app__footer">
+            <div id="madeby" class="madeby"></div>
+
+            <button class="btn" id="visibility">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentcolor"
+                        d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6zM18 20H6V10h12v10z" />
+                </svg>
+                <span class="inner hide-mobile">Private</span>
+            </button>
+
+            <div class="footer__middle">
+                <button class="lighthouse-live" id="lighthouseScoresButton" arial-label="Open Lighthouse Report">
+                    <div class="score">
+                        <div class="value"></div>
+                        <svg viewBox="0 0 120 120" class="lh-gauge">
+                            <circle class="lh-gauge-base" r="56" cx="60" cy="60"></circle>
+                            <circle class="lh-gauge-arc" transform="rotate(-90 60 60)" r="56" cx="60" cy="60"
+                                style="stroke-dasharray: 352, 352;"></circle>
+                        </svg>
+                    </div>
+                    <div class="score">
+                        <div class="value"></div>
+                        <svg viewBox="0 0 120 120" class="lh-gauge">
+                            <circle class="lh-gauge-base" r="56" cx="60" cy="60"></circle>
+                            <circle class="lh-gauge-arc" transform="rotate(-90 60 60)" r="56" cx="60" cy="60"
+                                style="stroke-dasharray: 352, 352;"></circle>
+                        </svg>
+                    </div>
+                    <div class="score">
+                        <div class="value"></div>
+                        <svg viewBox="0 0 120 120" class="lh-gauge">
+                            <circle class="lh-gauge-base" r="56" cx="60" cy="60"></circle>
+                            <circle class="lh-gauge-arc" transform="rotate(-90 60 60)" r="56" cx="60" cy="60"
+                                style="stroke-dasharray: 352, 352;"></circle>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+
+            <div class="footer__info">
+                <div class="badge-offline" id="onlineStatus"></div>
+                <div id="cursorPosition"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <div class="modal" id="configModal">
+        <div class="modal__dialog">
+            <div class="modal__dialog__header">
+                <div class="modal__dialog__title">
+                    <svg width="16" height="16" viewBox="0 0 24 24">
+                        <path fill="currentcolor"
+                            d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
+                    </svg>Configuration
+                </div>
+
+                <button class="btn btn--icon" id="closeConfig">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__dialog__body">
+                <section class="section">
+                    <h2 class="section__header">General</h2>
+                    <div class="section__body">
+                        <p>Enter a name for your Blnq</p>
+                        <div class="field field--full">
+                            <label>
+                                <input type="text" placeholder="An Untitled Masterpiece" maxlength="64"
+                                    id="blnqDisplayname" autocomplete="off" />
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="section" id="sharing">
+                    <div class="section__header">
+                        <h2>Sharing & Visibility</h2>
+                    </div>
+                    <div class="section__body">
+                        <p>
+                            Select your Blnq visiblity status.
+                            <br />
+                            <i>Public Blnqs may appear on the Dashboard
+                                and can be viewed by anyone. Private Blnqs
+                                can only be viewed by those with the URL.</i>
+                        </p>
+                        <div class="btn-group">
+                            <label>
+                                <input type="radio" name="visiblity" value="true" id="visPublic" />
+                                <div class="btn-group__label">
+                                    Public
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="visiblity" value="false" id="visPrivate" />
+                                <div class="btn-group__label">
+                                    Private
+                                </div>
+                            </label>
+                        </div>
+
+                        <p>Other users who can edit this Blnq</p>
+                        <div id="sharedWith"></div>
+                        <button class="btn btn--nopadding" id="addSharedUser">
+                            <svg fill="currentcolor" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                            </svg>
+                            <span class="inner">Add User</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="section">
+                    <h2 class="section__header">Framework/Libraries</h2>
+                    <div class="section__body">
+                        <p>
+                            Select from various frameworks and libraries to
+                            enhance your Blnq
+                        </p>
+                        <div class="field field--full">
+                            <label>
+                                <select id="configLibraries">
+                                    <option value="">Select...</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div id="configInfo"></div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="section__header">
+                        <h2>External Files</h2>
+                    </div>
+                    <div class="section__body">
+                        <p>
+                            Any URLs added here will be added as &ltlink&gt;
+                            and &ltscripts&gt; tags to the &lthead&gt;
+                        </p>
+                        <div class="dropdown open" id="cdnjsDropdown">
+                            <div class="field field--full">
+                                <label class="flex-row">
+                                    <div class="field__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" fill="currentcolor">
+                                            <path
+                                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                                        </svg>
+                                    </div>
+                                    <input type="text"
+                                        placeholder="Search and add things from CDNjs (React, Angular, Vue, ThreeJS etc...)"
+                                        value="" autocomplete="nope" id="cdnjs" />
+                                </label>
+                            </div>
+                            <div class="dropdown__body" style="
+                                        margin-top: -5px;
+                                        width: 100%;
+                                        max-height: 130px;
+                                        overflow: auto;
+                                    " id="cdnjsDropdownBody"></div>
+                        </div>
+                        <div id="extraFiles"></div>
+                        <button class="btn btn--nopadding" id="addExternalFile">
+                            <svg fill="currentcolor" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                            </svg>
+                            <span class="inner">Add External File</span>
+                        </button>
+                    </div>
+                </section>
+
+            </div>
+            <div class="modal__dialog__footer">
+                <button class="btn" id="saveConfig">
+                    <svg fill="currentcolor" width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M14 10H2v2h12v-2zm0-4H2v2h12V6zM2 16h8v-2H2v2zm19.5-4.5L23 13l-6.99 7-4.51-4.5L13 14l3.01 3 5.49-5.5z" />
+                    </svg>
+                    <span class="inner">Apply & Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="historyModal">
+        <div class="modal__dialog">
+            <div class="modal__dialog__header">
+                <div class="modal__dialog__title">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentcolor">
+                        <path
+                            d="M14 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-2-9a9 9 0 0 0-9 9H0l4 4 4-4H5c0-3.87 3.13-7 7-7s7 3.13 7 7a6.995 6.995 0 0 1-11.06 5.7l-1.42 1.44A9 9 0 1 0 12 3z" />
+                    </svg>History
+                </div>
+                <button class="btn btn--icon" id="closeHistory">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__dialog__body" style="text-align: center;">
+                <div class="spinner-wrapper show" id="historySpinner">
+                    <svg class="spinner" viewBox="0 0 50 50">
+                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2"></circle>
+                    </svg>
+                </div>
+                <p>Select a previous version to restore</p>
+
+                <section class="section">
+                    <div class="section__body">
+                        <div class="history-view">
+                            <div class="history-view__header">
+                                <div class="field field--full">
+                                    <label>
+                                        <select id="historySelect">
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="history-view__body" id="historyImagesHolder">
+                                <img aria-hidden="true"
+                                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQwIiBoZWlnaHQ9IjE4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiM0MDQ2NjIiIGQ9Ik0wIDBoMjQwdjE4MEgweiIvPjxnIG9wYWNpdHk9Ii4zMyIgZmlsbD0iIzFCMUUyQiI+PHBhdGggZD0iTTkzIDc5LjMzNEw5OS4yMjIgNzNsMTguNjY1IDE5LTE4LjY2NSAxOUw5MyAxMDQuNjY2IDEwNS40NDMgOTIgOTMgNzkuMzM0ek0xNDcuNzUyIDc5LjMzNEwxNDEuNTI5IDczbC0xOC42NjUgMTkgMTguNjY1IDE5IDYuMjIzLTYuMzM0TDEzNS4zMDggOTJsMTIuNDQ0LTEyLjY2NnoiLz48L2c+PC9nPjwvc3ZnPg==" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal__dialog__footer">
+                <button class="btn" id="historyRevertButton">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentcolor">
+                        <path
+                            d="M14 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm-2-9a9 9 0 0 0-9 9H0l4 4 4-4H5c0-3.87 3.13-7 7-7s7 3.13 7 7a6.995 6.995 0 0 1-11.06 5.7l-1.42 1.44A9 9 0 1 0 12 3z" />
+                    </svg>
+
+                    Restore Blnq
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="shareModal">
+        <div class="modal__dialog">
+            <div class="modal__dialog__header">
+                <div class="modal__dialog__title">
+                    <svg fill="currentcolor" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" />
+                    </svg>Share
+                </div>
+                <button class="btn btn--icon" id="closeShare">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__dialog__body">
+                <section class="section section--links">
+                    <h2 class="section__header">Links</h2>
+                    <div class="section__body"></div>
+                </section>
+                <section class="section section--files">
+                    <h2 class="section__header">Files</h2>
+                    <div class="section__body"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="preferencesModal">
+        <div class="modal__dialog">
+            <div class="modal__dialog__header">
+                <div class="modal__dialog__title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                        <path fill="currentcolor"
+                            d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z" />
+                    </svg>
+                    Preferences
+                </div>
+                <button class="btn btn--icon" id="closePreferences">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__dialog__body">
+                <section class="section">
+                    <h2 class="section__header">General</h2>
+                    <div class="section__body">
+                        <p>
+                            Choose your desired theme for Blnq Studio
+                        </p>
+                        <div class="btn-group">
+                            <label>
+                                <input type="radio" name="theme" value="light" id="themeLight" />
+                                <div class="btn-group__label">
+                                    Light
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="theme" value="dark" id="themeDark" />
+                                <div class="btn-group__label">
+                                    Dark
+                                </div>
+                            </label>
+                            <label>
+                                <input type="radio" name="theme" value="auto" id="themeAuto" />
+                                <div class="btn-group__label">
+                                    Auto
+                                </div>
+                            </label>
+                        </div>
+                        <div class="layout-choices-wrapper">
+                            <p>
+                                Select your prefered editor layout
+                            </p>
+                            <div class="layout-choices">
+                                <button class="active" data-layout="right-left">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor" d="M18 26h16V0H18z" />
+                                                <path d="M1 25h14V1H1v24z" stroke="currentcolor" stroke-width="2" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button data-layout="left-right">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor" d="M0 26h16V0H0z" />
+                                                <path d="M19 25h14V1H19v24z" stroke="currentcolor" stroke-width="2" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button data-layout="top-bottom">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor" d="M0 12h34V0H0z" />
+                                                <path d="M1 25h32V15H1v10z" stroke="currentcolor" stroke-width="2" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button data-layout="bottom-top">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor" d="M0 26h34V14H0z" />
+                                                <path d="M1 11h32V1H1v10z" stroke="currentcolor" stroke-width="2" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button data-layout="split-right">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor"
+                                                    d="M18 7h16V0H18zM18 16.5h16v-7H18zM18 26h16v-7H18z" />
+                                                <path d="M1 25h14V1H1v24z" stroke="currentcolor" stroke-width="2" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button data-layout="split-left">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor"
+                                                    d="M0 7h16V0H0zM0 16.5h16v-7H0zM0 26h16v-7H0z" />
+                                                <path d="M19 25h14V1H19v24z" stroke="currentcolor" stroke-width="2" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button data-layout="split-top">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor" d="M12 12h10V0H12zM0 12h10V0H0z" />
+                                                <path d="M1 25h32V15H1v10z" stroke="currentcolor" stroke-width="2" />
+                                                <path fill="currentcolor" d="M24 0v12h10V0z" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                                <button data-layout="split-bottom">
+                                    <div>
+                                        <svg width="34" height="26" xmlns="http://www.w3.org/2000/svg">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <path fill="currentcolor" d="M12 26h10V14H12zM0 26h10V14H0z" />
+                                                <path d="M1 11h32V1H1v10z" stroke="currentcolor" stroke-width="2" />
+                                                <path fill="currentcolor" d="M24 14v12h10V14z" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <h2 class="section__header">Editor</h2>
+                    <div class="section__body">
+                        <p>
+                            Change the editor options with options below
+                        </p>
+                        <div style="height: 10px;"></div>
+
+                        <div class="switch">
+                            <div style="margin-top: 10px;"></div>
+                            <label>
+                                <input type="checkbox" id="pref-lineNumbers" checked />
+                                <div class="switch__label">
+                                    Line Numbers
+                                </div>
+                            </label>
+                        </div>
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox" id="pref-wordWrap" checked />
+                                <div class="switch__label">
+                                    Word Wrap
+                                </div>
+                            </label>
+                        </div>
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox" id="pref-folding" />
+                                <div class="switch__label">
+                                    Folding
+                                </div>
+                            </label>
+                        </div>
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox" id="pref-miniMap" />
+                                <div class="switch__label">
+                                    Minimap
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="flex-row padded" style="margin-bottom: 20px;">
+                            <div class="flex">
+                                <p style="margin: 0 0 2px 0;">
+                                    Code Indentation
+                                </p>
+                                <div class="btn-group" style="margin-bottom: 0;">
+                                    <label>
+                                        <input type="radio" name="indentation" value="tabs" id="indentationTabs" />
+                                        <div class="btn-group__label">
+                                            Tabs
+                                        </div>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="indentation" value="spaces" id="indentationSpaces" />
+                                        <div class="btn-group__label">
+                                            Spaces
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field field--full" style="
+                                        width: auto;
+                                        margin-left: 5px;
+                                        min-width: 80px;
+                                    ">
+                                <label>
+                                    <div class="field__label">
+                                        Size
+                                    </div>
+                                    <input min="1" type="number" maxlength="2" id="pref-indentationSize"
+                                        autocomplete="off" value="4" style="width: 30px;" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex-row padded">
+                            <div class="field field--full">
+                                <label>
+                                    <div class="field__label">
+                                        Font Family (locally installed)
+                                    </div>
+                                    <input type="text" placeholder="e.g FIRA CODE" maxlength="64" id="pref-fontName"
+                                        autocomplete="off" />
+                                </label>
+                            </div>
+                            <div class="field field--full" style="
+                                        width: auto;
+                                        margin-left: 5px;
+                                        min-width: 80px;
+                                    ">
+                                <label>
+                                    <div class="field__label">
+                                        Font Size
+                                    </div>
+                                    <input type="number" maxlength="2" id="pref-fontSize" autocomplete="off" value="12"
+                                        style="width: 30px;" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox" id="pref-fontLigatures" />
+                                <div class="switch__label">
+                                    Use Font Ligatures (If supported)
+                                </div>
+                            </label>
+                        </div>
+                        <div style="height: 10px;"></div>
+                    </div>
+                </section>
+                <section class="section">
+                    <h2 class="section__header">More features</h2>
+                    <div class="section__body">
+                        <div class="switch">
+                            <div style="margin-top: 10px;"></div>
+                            <label>
+                                <input type="checkbox" id="pref-datatab" />
+                                <div class="switch__label">
+                                    DATA
+                                </div>
+                                <div class="switch__sublabel">
+                                    Enable this option to show a DATA tab
+                                    for JSON, adding the ability to
+                                    reference the data from /f/[blnqname]
+                                    within your JS tab.
+                                </div>
+                            </label>
+                        </div>
+
+
+                        <div style="height: 10px;"></div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal__dialog__footer">
+                <button class="btn" id="closePreferencesButton">
+                    <span class="inner">Done</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="blnq.js" type="module"></script>
+
+</body>
+
+</html>

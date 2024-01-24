@@ -1,0 +1,134 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -webkit-user-select: inherit;
+    user-select: inherit;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-drag: none;
+}
+
+body:not(.kb-focus) :focus {
+    outline: none;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+    user-select: none;
+    background: @dark-grey;
+
+    -webkit-touch-callout: none;
+    &[data-theme='theme-light'] {
+        background: @white;
+    }
+}
+
+input,
+textarea,
+.monaco-editor {
+    user-select: auto;
+}
+
+body {
+    font-family: 'OpenSans-SemiBold', 'HelveticaNeue-Light',
+        'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+        'Lucida Grande', sans-serif;
+    font-size: 12px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    color: @grey;
+    background: @hint;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+    font-size: 16px;
+    margin: 0;
+    color: @hover;
+    [data-theme='theme-light'] & {
+        color: @dark-grey;
+    }
+}
+
+h3 {
+    color: @hover;
+}
+
+p {
+    font-size: 12px;
+    margin: 10px 0 15px 0;
+    color: @grey;
+}
+
+hr {
+    height: 0;
+    margin: 15px 0;
+    opacity: 0.33;
+    border: 0;
+}
+
+a {
+    color: @hint;
+}
+
+.hide-mobile {
+    @media screen and (max-width: @mobile-size) {
+        display: none !important;
+    }
+}
+
+.show-mobile {
+    display: none;
+    @media screen and (max-width: @mobile-size) {
+        display: unset;
+    }
+}
+
+.isWindows {
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &[data-theme='theme-light'] {
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+    path {
+        fill: @grey;
+    }
+    [data-theme='theme-light'] & {
+        fill: fade(@dark-grey, 33%);
+    }
+}
+
+.yRemoteSelection {
+    background-color: fade(@hint, 20%);
+}
+.yRemoteSelectionHead {
+    position: absolute;
+    z-index: 100;
+    width: 2px;
+    height: 100%;
+    background: @hint;
+}

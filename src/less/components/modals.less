@@ -1,0 +1,135 @@
+.modal {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    &.show {
+        visibility: initial;
+        opacity: 1;
+    }
+}
+
+.modal__dialog {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 520px;
+    max-width: 90%;
+    max-height: 90%;
+    @media screen and (max-width: @mobile-size) {
+        max-width: 95%;
+    }
+    border-radius: @border-radius;
+    background: @medium-grey;
+    will-change: transform;
+    [data-theme='theme-light'] & {
+        background: @white;
+    }
+}
+
+.modal__dialog__header {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 43px;
+    border-bottom: 1px solid @dark-grey;
+    [data-theme='theme-light'] & {
+        border-color: @white-darker;
+    }
+}
+
+.modal__dialog__title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 20px;
+    color: @hint;
+    svg {
+        margin-right: 5px;
+    }
+    [data-theme='theme-light'] & {
+        color: @dark-grey;
+    }
+}
+
+.modal__dialog__body {
+    position: relative;
+    overflow: auto;
+    flex: 1;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal__dialog__footer {
+    display: flex;
+    text-align: center;
+    border-top: 1px solid @dark-grey;
+    .btn {
+        flex: 1;
+        justify-content: center;
+        padding-bottom: 4px;
+        color: @hint;
+        [data-theme='theme-light'] & {
+            color: @dark-grey;
+        }
+        &:hover,
+        &:focus {
+            color: @white;
+        }
+    }
+    [data-theme='theme-light'] & {
+        border-color: @white-darker;
+    }
+}
+
+#historyModal {
+    padding-bottom: 0;
+    .modal__dialog__body {
+        padding-bottom: 20px;
+    }
+    .history-view__body {
+        position: relative;
+        overflow: hidden;
+        border-radius: @border-radius;
+        &:before {
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: @border-radius;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+        #historyImage {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+    .section__body {
+        padding-bottom: 0;
+    }
+}
+
+#loginModal {
+    .modal__dialog {
+        height: 550px;
+        min-height: 0;
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        "dist/": false,
+        ".cache/": true,
+        ".parcel-cache/": true
+    },
+    "less.lint.duplicateProperties": "error"
+}
